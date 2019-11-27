@@ -1,7 +1,13 @@
+# Katastr nemovitostí - SOAP API pro jazyk Go
+
+https://www.cuzk.cz/Katastr-nemovitosti/Poskytovani-udaju-z-KN/Dalkovy-pristup/Webove-sluzby-dalkoveho-pristupu.aspx
+
 ## Generace kódu
+Kód je generován pomocí https://github.com/fiorix/wsdl2go
+
 1. Stáhnout Aktualizovaný popis WSDP z https://www.cuzk.cz/Katastr-nemovitosti/Poskytovani-udaju-z-KN/Dalkovy-pristup/Webove-sluzby-dalkoveho-pristupu.aspx
 2. Rozbalit archiv
-3. A z nové složky spustit pomocí https://github.com/fiorix/wsdl2go následující:
+3. Z výsledné složky spustit následující:
 
 ```
 for i in $(find . -name *.wsdl); do ( cd $(dirname $i); wsdl2go > $(basename $i).go < ./$(basename $i); ); done
